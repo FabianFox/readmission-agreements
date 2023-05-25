@@ -11,9 +11,11 @@ path <- here("data", "Dataset Inventory of the Bilateral Agreements linked to Re
 # Load
 ra.orig <- path %>% 
   excel_sheets() %>% 
+  # remove metadata sheet
   .[-1] %>%
   set_names() %>% 
-  map_df(~ read_excel(path = path, sheet = .x, range = cell_cols("A:B"), col_names = c("countryB", "agreement")), .id = "countryA")
+  map_df(~ read_excel(path = path, sheet = .x, range = cell_cols("A:B"),
+                      col_names = c("countryB", "agreement")), .id = "countryA")
 
 # Clean data
 ra.df <- ra.orig %>%
