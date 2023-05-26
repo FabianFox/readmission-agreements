@@ -5,7 +5,7 @@ if (!require("xfun")) install.packages("xfun")
 pkg_attach2("tidyverse", "here", "readxl", "janitor", "countrycode")
 
 # Load data
-# ordered to leave - migr_eiordmn
+# ordered to leave - migr_eiord
 # returned following an order to leave - migr_eirtn
 
 # Return orders
